@@ -15,3 +15,27 @@ This a a project I built for one of my CS courses. It´s a fully functional mini
 
 ## Demo
 Find a demo video at media/demo.mp4
+
+## How to run
+
+Requirements: a Java JDK (11 or newer). On Windows you can install one with:
+
+```powershell
+winget install EclipseAdoptium.Temurin.21.JDK
+```
+
+Run these commands from the project root (the game loads its images and levels with paths relative to it).
+
+**Windows (PowerShell)**
+
+```powershell
+javac -encoding UTF-8 -sourcepath src -cp entorno.jar -d bin (Get-ChildItem -Recurse src -Filter *.java).FullName
+java -cp "bin;entorno.jar" juego.Juego
+```
+
+**macOS / Linux / Git Bash**
+
+```bash
+javac -encoding UTF-8 -sourcepath src -cp entorno.jar -d bin $(find src -name "*.java")
+java -cp "bin:entorno.jar" juego.Juego
+```

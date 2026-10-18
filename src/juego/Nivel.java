@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javafx.scene.shape.Circle;
+import java.awt.geom.Ellipse2D;
 
 import javax.imageio.ImageIO;
 
@@ -22,7 +22,7 @@ public class Nivel {
 	private List<Rectangle> posDash = new ArrayList<Rectangle>();
 	private List<Rectangle> posTeleport = new ArrayList<Rectangle>();
 	private List<Rectangle> posTroncos = new ArrayList<Rectangle>();
-	private Circle agujero;
+	private Ellipse2D agujero;
 	private FileReader fr = null;  	 
     private BufferedReader br = null;
 
@@ -113,7 +113,7 @@ public class Nivel {
 					else if(guardarEn == "Dash" ) posDash.add(colision);
 					else if(guardarEn == "Teleport" ) posTeleport.add(colision);
 					else if(guardarEn == "Troncos" ) posTroncos.add(colision);
-					else if(guardarEn == "Agujero") agujero = new Circle(Integer.parseInt(nums[0]),Integer.parseInt(nums[1]),16);				
+					else if(guardarEn == "Agujero") agujero = new Ellipse2D.Double(Integer.parseInt(nums[0]) - 16, Integer.parseInt(nums[1]) - 16, 32, 32);				
 				}
 			}
 		}catch (IOException e) {
